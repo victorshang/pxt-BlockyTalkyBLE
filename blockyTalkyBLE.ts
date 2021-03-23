@@ -64,19 +64,17 @@ namespace blockyTalkyBLE {
     }
 
     let splitString = (splitOnChar: string, input: string) => {
-      let result:string[] = []
+      let result:Array<string>=[]
       let count = 0
       let startIndex = 0
       for (let index = 0; index < input.length; index++) {
           if (input.charAt(index) == splitOnChar) {
-              result[count] = input.substr(startIndex, index - startIndex)
-
+              result.push(input.substr(startIndex, index - startIndex))
               startIndex = index + 1
               count = count + 1
           }
       }
-      result[count] = input.substr(startIndex, input.length - startIndex)
-
+      result.push(input.substr(startIndex, input.length - startIndex))
       return result;
     }
 
