@@ -63,7 +63,7 @@ namespace blockyTalkyBLE {
         bluetooth.uartWriteString(indicatorAsString + delimiter + key + delimiter + value + terminator)
     }
 
-    let splitString = (splitOnChar: string, input: string) => {
+    function splitString (splitOnChar: string, input: string) : Array<string> {
       let result:Array<string>=[]
       let count = 0
       let startIndex = 0
